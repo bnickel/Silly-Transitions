@@ -9,12 +9,20 @@
 #import "ViewController.h"
 #import "BKNTransitioningDelegate.h"
 #import "UIViewController+SillyTransitions.h"
+#import "UIBezierPath+SillyTransitions.h"
 
 @interface ViewController ()
-
+@property (weak, nonatomic) IBOutlet UIButton *starButton;
 @end
 
 @implementation ViewController
+
+- (void)viewDidLoad
+{
+    CAShapeLayer *starLayer = [CAShapeLayer layer];
+    starLayer.path = [[UIBezierPath BKN_bezierPathWithStarEncompassingRect:self.starButton.titleLabel.frame] CGPath];
+    self.starButton.layer.mask = starLayer;
+}
 
 - (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender
 {
@@ -29,18 +37,15 @@
         [segue.destinationViewController setBKN_introTransitionType:BKNSillyTransitionTypeStar];
     }
     
-    [segue.destinationViewController view].backgroundColor = [self randomColor];
+    [segue.destinationViewController setTitle:[sender titleForState:UIControlStateNormal]];
+    [segue.destinationViewController view].backgroundColor = [self rotatedColor];
 }
 
-- (UIColor *)randomColor
+- (UIColor *)rotatedColor
 {
-    static dispatch_once_t onceToken;
-    dispatch_once(&onceToken, ^{
-        srand48(time(0));
-    });
-    
-    
-    return [UIColor colorWithHue:drand48() saturation:1 brightness:1 alpha:1];
+    static NSInteger SharedHue = - 100;
+    SharedHue = (SharedHue + 100) % 360;
+    return [UIColor colorWithHue:(float)SharedHue / 360.0 saturation:1 brightness:1 alpha:1];
 }
 
 @end

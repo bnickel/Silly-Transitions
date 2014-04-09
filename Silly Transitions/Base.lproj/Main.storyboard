@@ -31,30 +31,60 @@
                         <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                         <subviews>
-                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="xbN-Ma-1gM">
-                                <rect key="frame" x="137" y="129" width="50" height="30"/>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="sVC-iC-ay5">
+                                <rect key="frame" x="115" y="189" width="90" height="190"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <state key="normal" title="Normal">
-                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
-                                </state>
-                                <connections>
-                                    <segue destination="vXZ-lx-hvc" kind="push" identifier="normal" id="RWp-ph-z5a"/>
-                                </connections>
-                            </button>
-                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="lQS-Pt-wJO">
-                                <rect key="frame" x="139" y="185" width="30" height="30"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <state key="normal" title="Star">
-                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
-                                </state>
-                                <connections>
-                                    <segue destination="vXZ-lx-hvc" kind="push" identifier="star" id="JH5-9P-SEy"/>
-                                </connections>
-                            </button>
+                                <subviews>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="xbN-Ma-1gM">
+                                        <rect key="frame" x="0.0" y="0.0" width="90" height="90"/>
+                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                        <color key="backgroundColor" white="1" alpha="0.90000000000000002" colorSpace="calibratedWhite"/>
+                                        <constraints>
+                                            <constraint firstAttribute="width" constant="90" id="5pQ-Wu-C9x"/>
+                                            <constraint firstAttribute="height" constant="90" id="mCn-K4-HH1"/>
+                                        </constraints>
+                                        <state key="normal" title="Normal">
+                                            <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                        </state>
+                                        <connections>
+                                            <segue destination="vXZ-lx-hvc" kind="push" identifier="normal" id="RWp-ph-z5a"/>
+                                        </connections>
+                                    </button>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="lQS-Pt-wJO">
+                                        <rect key="frame" x="0.0" y="100" width="90" height="90"/>
+                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                        <color key="backgroundColor" white="1" alpha="0.90000000000000002" colorSpace="calibratedWhite"/>
+                                        <state key="normal" title="Star">
+                                            <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                        </state>
+                                        <connections>
+                                            <segue destination="vXZ-lx-hvc" kind="push" identifier="star" id="JH5-9P-SEy"/>
+                                        </connections>
+                                    </button>
+                                </subviews>
+                                <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                                <constraints>
+                                    <constraint firstItem="xbN-Ma-1gM" firstAttribute="top" secondItem="sVC-iC-ay5" secondAttribute="top" id="0kN-qH-IWT"/>
+                                    <constraint firstItem="lQS-Pt-wJO" firstAttribute="width" secondItem="xbN-Ma-1gM" secondAttribute="width" id="BQq-P1-9j3"/>
+                                    <constraint firstAttribute="bottom" secondItem="lQS-Pt-wJO" secondAttribute="bottom" id="Df0-lJ-9gq"/>
+                                    <constraint firstAttribute="trailing" secondItem="xbN-Ma-1gM" secondAttribute="trailing" id="MlU-l9-Igu"/>
+                                    <constraint firstItem="lQS-Pt-wJO" firstAttribute="height" secondItem="xbN-Ma-1gM" secondAttribute="height" id="RTd-fh-SfA"/>
+                                    <constraint firstItem="lQS-Pt-wJO" firstAttribute="top" secondItem="xbN-Ma-1gM" secondAttribute="bottom" constant="10" id="XVG-Y9-GeJ"/>
+                                    <constraint firstAttribute="centerX" secondItem="lQS-Pt-wJO" secondAttribute="centerX" id="fZk-ml-teN"/>
+                                    <constraint firstItem="xbN-Ma-1gM" firstAttribute="leading" secondItem="sVC-iC-ay5" secondAttribute="leading" id="nj7-Jg-eob"/>
+                                </constraints>
+                            </view>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstAttribute="centerY" secondItem="sVC-iC-ay5" secondAttribute="centerY" id="PD5-HO-cSN"/>
+                            <constraint firstAttribute="centerX" secondItem="sVC-iC-ay5" secondAttribute="centerX" id="nrh-sz-EkV"/>
+                        </constraints>
                     </view>
                     <navigationItem key="navigationItem" id="1zj-nu-w0Q"/>
+                    <connections>
+                        <outlet property="starButton" destination="lQS-Pt-wJO" id="fnw-JG-Dba"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="x5A-6p-PRh" sceneMemberID="firstResponder"/>
             </objects>
