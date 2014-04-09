@@ -47,19 +47,47 @@
     UIViewController *from = [transitionContext viewControllerForKey:UITransitionContextFromViewControllerKey];
     UIViewController *to = [transitionContext viewControllerForKey:UITransitionContextToViewControllerKey];
     
+    UIView *viewToAnimate;
+    
+    switch (self.direction) {
+        case BKNStarTransitionOut:
+            viewToAnimate = to.view;
+            break;
+            
+        case BKNStarTransitionIn:
+            viewToAnimate = from.view;
+            break;
+    }
+    
     to.view.frame = [transitionContext finalFrameForViewController:to];
     [[transitionContext containerView] addSubview:to.view];
     
+    [[transitionContext containerView] addSubview:viewToAnimate];
+    
     CAShapeLayer *shapeLayer = [CAShapeLayer layer];
     shapeLayer.anchorPoint = CGPointMake(0, 1);
-    to.view.layer.mask = shapeLayer;
+    viewToAnimate.layer.mask = shapeLayer;
+    
+    CGRect targetBounds = viewToAnimate.bounds;
     
     [CATransaction BKN_transactionWithDuration:duration animations:^{
         CABasicAnimation *pathAnimation = [CABasicAnimation animationWithKeyPath:@"path"];
         
-        CGRect targetBounds = to.view.bounds;
-        pathAnimation.fromValue = (id)[UIBezierPath BKN_bezierPathWithStarEncompassingRect:CGRectMake(CGRectGetMidX(targetBounds) - 1, CGRectGetMidY(targetBounds) - 1, 2, 2)].CGPath;
-        pathAnimation.toValue = (id)[UIBezierPath BKN_bezierPathWithStarEncompassingRect:targetBounds].CGPath;
+        UIBezierPath *bigPath = [UIBezierPath BKN_bezierPathWithStarEncompassingRect:targetBounds];
+        UIBezierPath *smallPath = [UIBezierPath BKN_bezierPathWithStarEncompassingRect:CGRectMake(CGRectGetMidX(targetBounds) - 1, CGRectGetMidY(targetBounds) - 1, 2, 2)];
+        
+        switch (self.direction) {
+            case BKNStarTransitionOut:
+                pathAnimation.fromValue = (id)smallPath.CGPath;
+                pathAnimation.toValue = (id)bigPath.CGPath;
+                break;
+                
+            case BKNStarTransitionIn:
+                pathAnimation.fromValue = (id)bigPath.CGPath;
+                pathAnimation.toValue = (id)smallPath.CGPath;
+                break;
+        }
+        
         [shapeLayer addAnimation:pathAnimation forKey:@"path"];
         shapeLayer.path = (__bridge CGPathRef)(pathAnimation.toValue);
     } completion:^{
