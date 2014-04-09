@@ -91,7 +91,7 @@
         [shapeLayer addAnimation:pathAnimation forKey:@"path"];
         shapeLayer.path = (__bridge CGPathRef)(pathAnimation.toValue);
     } completion:^{
-        to.view.layer.mask = nil;
+        viewToAnimate.layer.mask = nil;
         if ([transitionContext transitionWasCancelled]) {
             [to.view removeFromSuperview];
             [transitionContext completeTransition:NO];
@@ -100,6 +100,11 @@
             [transitionContext completeTransition:YES];
         }
     }];
+}
+
+- (void)addPopGestureRecognizersToViewController:(UIViewController *)viewController transitioningDelegate:(BKNTransitioningDelegate *)transitioningDelegate
+{
+    [viewController.view addGestureRecognizer:[transitioningDelegate panGestureRecognizerForLeftEdgeOfViewController:viewController]];
 }
 
 @end

@@ -26,6 +26,7 @@
 		EBEBBAA718F5B7F900323064 /* _BKNStarTransition.m in Sources */ = {isa = PBXBuildFile; fileRef = EBEBBAA618F5B7F900323064 /* _BKNStarTransition.m */; };
 		EBEBBAAA18F5C03800323064 /* UIBezierPath+SillyTransitions.m in Sources */ = {isa = PBXBuildFile; fileRef = EBEBBAA918F5C03800323064 /* UIBezierPath+SillyTransitions.m */; };
 		EBEBBAAD18F5C83E00323064 /* CATransaction+SillyTransitions.m in Sources */ = {isa = PBXBuildFile; fileRef = EBEBBAAC18F5C83E00323064 /* CATransaction+SillyTransitions.m */; };
+		EBEBBAB018F5E95C00323064 /* UIGestureRecognizer+SillyTransitions.m in Sources */ = {isa = PBXBuildFile; fileRef = EBEBBAAF18F5E95C00323064 /* UIGestureRecognizer+SillyTransitions.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -68,6 +69,8 @@
 		EBEBBAA918F5C03800323064 /* UIBezierPath+SillyTransitions.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIBezierPath+SillyTransitions.m"; sourceTree = "<group>"; };
 		EBEBBAAB18F5C83E00323064 /* CATransaction+SillyTransitions.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "CATransaction+SillyTransitions.h"; sourceTree = "<group>"; };
 		EBEBBAAC18F5C83E00323064 /* CATransaction+SillyTransitions.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "CATransaction+SillyTransitions.m"; sourceTree = "<group>"; };
+		EBEBBAAE18F5E95C00323064 /* UIGestureRecognizer+SillyTransitions.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIGestureRecognizer+SillyTransitions.h"; sourceTree = "<group>"; };
+		EBEBBAAF18F5E95C00323064 /* UIGestureRecognizer+SillyTransitions.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIGestureRecognizer+SillyTransitions.m"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -136,6 +139,8 @@
 				EBEBBA7118F5B43A00323064 /* Supporting Files */,
 				EBEBBA9F18F5B4D200323064 /* BKNTransitioningDelegate.h */,
 				EBEBBAA018F5B4D200323064 /* BKNTransitioningDelegate.m */,
+				EBEBBAAE18F5E95C00323064 /* UIGestureRecognizer+SillyTransitions.h */,
+				EBEBBAAF18F5E95C00323064 /* UIGestureRecognizer+SillyTransitions.m */,
 				EBEBBAA218F5B56C00323064 /* UIViewController+SillyTransitions.h */,
 				EBEBBAA318F5B56C00323064 /* UIViewController+SillyTransitions.m */,
 				EBEBBAA518F5B7F900323064 /* _BKNStarTransition.h */,
@@ -281,6 +286,7 @@
 				EBEBBAAA18F5C03800323064 /* UIBezierPath+SillyTransitions.m in Sources */,
 				EBEBBA7B18F5B43A00323064 /* AppDelegate.m in Sources */,
 				EBEBBAAD18F5C83E00323064 /* CATransaction+SillyTransitions.m in Sources */,
+				EBEBBAB018F5E95C00323064 /* UIGestureRecognizer+SillyTransitions.m in Sources */,
 				EBEBBA7718F5B43A00323064 /* main.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

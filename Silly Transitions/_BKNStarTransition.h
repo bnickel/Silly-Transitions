@@ -6,14 +6,14 @@
 //  Copyright (c) 2014 Brian Nickel. All rights reserved.
 //
 
-#import <Foundation/Foundation.h>
+#import "BKNTransitioningDelegate.h"
 
 typedef NS_ENUM(NSInteger, BKNStarTransitionDirection) {
     BKNStarTransitionIn,
     BKNStarTransitionOut
 };
 
-@interface _BKNStarTransition : NSObject <UIViewControllerAnimatedTransitioning>
+@interface _BKNStarTransition : UIPercentDrivenInteractiveTransition <BKNSillyTransition>
 
 - (instancetype)initWithDirection:(BKNStarTransitionDirection)direction;
 - (instancetype)initWithNavigationOperation:(UINavigationControllerOperation)operation;
