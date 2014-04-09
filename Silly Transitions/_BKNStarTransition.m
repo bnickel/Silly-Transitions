@@ -37,7 +37,7 @@
 
 - (NSTimeInterval)transitionDuration:(id<UIViewControllerContextTransitioning>)transitionContext
 {
-    return UINavigationControllerHideShowBarDuration * 5;
+    return UINavigationControllerHideShowBarDuration * 2;
 }
 
 - (void)animateTransition:(id<UIViewControllerContextTransitioning>)transitionContext

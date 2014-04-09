@@ -12,11 +12,29 @@
 
 + (instancetype)BKN_bezierPathWithStarEncompassingRect:(CGRect)innerRect
 {
-    CGFloat diameter = powf(powf(CGRectGetWidth(innerRect), 2) + powf(CGRectGetHeight(innerRect), 2), 0.5);
+    const NSUInteger NumberOfPoints = 5;
+    const CGFloat PointSize = 2.618;
+
+    CGFloat innerRadius = powf(powf(CGRectGetWidth(innerRect), 2) + powf(CGRectGetHeight(innerRect), 2), 0.5) / 2;
+    CGFloat outerRadius = innerRadius * PointSize;
     
-    CGRect rect = CGRectMake(CGRectGetMidX(innerRect) - diameter / 2, CGRectGetMidY(innerRect) - diameter / 2, diameter, diameter);
+    CGAffineTransform centerTranslation = CGAffineTransformMakeTranslation(CGRectGetMidX(innerRect), CGRectGetMidY(innerRect));
     
-    return [self bezierPathWithOvalInRect:rect];
+    CGPoint innerPoint = CGPointMake(0, -innerRadius);
+    CGPoint outerPoint = CGPointMake(0, -outerRadius);
+    
+    CGFloat radialStep = M_PI / NumberOfPoints;
+    
+    UIBezierPath *path = [self bezierPath];
+    
+    [path moveToPoint:CGPointApplyAffineTransform(outerPoint, centerTranslation)];
+    
+    for (NSUInteger i = 0; i < NumberOfPoints; i ++) {
+        [path addLineToPoint:CGPointApplyAffineTransform(CGPointApplyAffineTransform(innerPoint, CGAffineTransformMakeRotation(radialStep * (i * 2 + 1))), centerTranslation)];
+        [path addLineToPoint:CGPointApplyAffineTransform(CGPointApplyAffineTransform(outerPoint, CGAffineTransformMakeRotation(radialStep * (i * 2 + 2))), centerTranslation)];
+    }
+    
+    return path;
 }
 
 @end
