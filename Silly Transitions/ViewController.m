@@ -43,6 +43,8 @@
         [segue.destinationViewController setBKN_introTransitionType:BKNSillyTransitionTypeStar];
     } else if ([segue.identifier isEqualToString:@"flip"]) {
         [segue.destinationViewController setBKN_introTransitionType:BKNSillyTransitionTypeFlip];
+    } else if ([segue.identifier isEqualToString:@"fade"]) {
+        [segue.destinationViewController setBKN_introTransitionType:BKNSillyTransitionTypeFade];
     }
     
     [segue.destinationViewController setTitle:[sender titleForState:UIControlStateNormal]];

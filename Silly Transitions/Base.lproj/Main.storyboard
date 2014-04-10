@@ -51,7 +51,7 @@
                                         </connections>
                                     </button>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="lQS-Pt-wJO">
-                                        <rect key="frame" x="50" y="100" width="90" height="90"/>
+                                        <rect key="frame" x="0.0" y="100" width="90" height="90"/>
                                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                         <color key="backgroundColor" white="1" alpha="0.90000000000000002" colorSpace="calibratedWhite"/>
                                         <state key="normal" title="Star">
@@ -59,6 +59,21 @@
                                         </state>
                                         <connections>
                                             <segue destination="vXZ-lx-hvc" kind="push" identifier="star" id="JH5-9P-SEy"/>
+                                        </connections>
+                                    </button>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="6OA-TP-oeG">
+                                        <rect key="frame" x="100" y="100" width="90" height="90"/>
+                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                        <color key="backgroundColor" white="1" alpha="0.90000000000000002" colorSpace="calibratedWhite"/>
+                                        <constraints>
+                                            <constraint firstAttribute="height" constant="90" id="Wrm-ym-62d"/>
+                                            <constraint firstAttribute="width" constant="90" id="j21-Qb-SV6"/>
+                                        </constraints>
+                                        <state key="normal" title="Cross Fade">
+                                            <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                        </state>
+                                        <connections>
+                                            <segue destination="vXZ-lx-hvc" kind="push" identifier="fade" id="U3I-OO-w6B"/>
                                         </connections>
                                     </button>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="0wa-cX-dM0">
@@ -80,12 +95,14 @@
                                     <constraint firstAttribute="trailing" secondItem="0wa-cX-dM0" secondAttribute="trailing" id="Awo-P7-VPi"/>
                                     <constraint firstItem="lQS-Pt-wJO" firstAttribute="width" secondItem="xbN-Ma-1gM" secondAttribute="width" id="BQq-P1-9j3"/>
                                     <constraint firstAttribute="bottom" secondItem="lQS-Pt-wJO" secondAttribute="bottom" id="Df0-lJ-9gq"/>
+                                    <constraint firstItem="6OA-TP-oeG" firstAttribute="centerY" secondItem="lQS-Pt-wJO" secondAttribute="centerY" id="Hyd-3a-xTd"/>
                                     <constraint firstItem="lQS-Pt-wJO" firstAttribute="height" secondItem="xbN-Ma-1gM" secondAttribute="height" id="RTd-fh-SfA"/>
                                     <constraint firstItem="xbN-Ma-1gM" firstAttribute="height" secondItem="0wa-cX-dM0" secondAttribute="height" id="UVR-zi-DhE"/>
                                     <constraint firstItem="lQS-Pt-wJO" firstAttribute="top" secondItem="xbN-Ma-1gM" secondAttribute="bottom" constant="10" id="XVG-Y9-GeJ"/>
+                                    <constraint firstItem="xbN-Ma-1gM" firstAttribute="centerX" secondItem="lQS-Pt-wJO" secondAttribute="centerX" id="Yhr-3I-RxB"/>
+                                    <constraint firstItem="6OA-TP-oeG" firstAttribute="centerX" secondItem="0wa-cX-dM0" secondAttribute="centerX" id="cK5-7v-nU0"/>
                                     <constraint firstItem="0wa-cX-dM0" firstAttribute="leading" secondItem="xbN-Ma-1gM" secondAttribute="trailing" constant="10" id="cx5-lc-lZ4"/>
                                     <constraint firstItem="xbN-Ma-1gM" firstAttribute="centerY" secondItem="0wa-cX-dM0" secondAttribute="centerY" id="fNF-aI-x6g"/>
-                                    <constraint firstAttribute="centerX" secondItem="lQS-Pt-wJO" secondAttribute="centerX" id="fZk-ml-teN"/>
                                     <constraint firstItem="xbN-Ma-1gM" firstAttribute="leading" secondItem="sVC-iC-ay5" secondAttribute="leading" id="nj7-Jg-eob"/>
                                 </constraints>
                             </view>

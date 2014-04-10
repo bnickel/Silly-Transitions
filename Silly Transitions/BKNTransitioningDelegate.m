@@ -11,6 +11,7 @@
 #import "UIGestureRecognizer+SillyTransitions.h"
 #import "_BKNStarTransition.h"
 #import "_BKNFlipTransition.h"
+#import "_BKNFadeTransition.h"
 
 @interface BKNTransitioningDelegate()
 @property (nonatomic, strong) id<BKNSillyTransition> currentTransition;
@@ -50,6 +51,10 @@
             
         case BKNSillyTransitionTypeFlip:
             self.currentTransition = [[_BKNFlipTransition alloc] initWithNavigationOperation:operation];
+            break;
+            
+        case BKNSillyTransitionTypeFade:
+            self.currentTransition = [[_BKNFadeTransition alloc] initWithNavigationOperation:operation];
             break;
     }
     
