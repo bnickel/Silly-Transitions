@@ -32,7 +32,7 @@
                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                         <subviews>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="sVC-iC-ay5">
-                                <rect key="frame" x="115" y="189" width="90" height="190"/>
+                                <rect key="frame" x="65" y="189" width="190" height="190"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <subviews>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="xbN-Ma-1gM">
@@ -51,7 +51,7 @@
                                         </connections>
                                     </button>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="lQS-Pt-wJO">
-                                        <rect key="frame" x="0.0" y="100" width="90" height="90"/>
+                                        <rect key="frame" x="50" y="100" width="90" height="90"/>
                                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                         <color key="backgroundColor" white="1" alpha="0.90000000000000002" colorSpace="calibratedWhite"/>
                                         <state key="normal" title="Star">
@@ -61,15 +61,30 @@
                                             <segue destination="vXZ-lx-hvc" kind="push" identifier="star" id="JH5-9P-SEy"/>
                                         </connections>
                                     </button>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="0wa-cX-dM0">
+                                        <rect key="frame" x="100" y="0.0" width="90" height="90"/>
+                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                        <color key="backgroundColor" white="1" alpha="0.90000000000000002" colorSpace="calibratedWhite"/>
+                                        <state key="normal" title="Flip">
+                                            <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                        </state>
+                                        <connections>
+                                            <segue destination="vXZ-lx-hvc" kind="push" identifier="flip" id="0v7-HN-gKI"/>
+                                        </connections>
+                                    </button>
                                 </subviews>
                                 <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                                 <constraints>
                                     <constraint firstItem="xbN-Ma-1gM" firstAttribute="top" secondItem="sVC-iC-ay5" secondAttribute="top" id="0kN-qH-IWT"/>
+                                    <constraint firstItem="xbN-Ma-1gM" firstAttribute="width" secondItem="0wa-cX-dM0" secondAttribute="width" id="2Mj-eY-xJA"/>
+                                    <constraint firstAttribute="trailing" secondItem="0wa-cX-dM0" secondAttribute="trailing" id="Awo-P7-VPi"/>
                                     <constraint firstItem="lQS-Pt-wJO" firstAttribute="width" secondItem="xbN-Ma-1gM" secondAttribute="width" id="BQq-P1-9j3"/>
                                     <constraint firstAttribute="bottom" secondItem="lQS-Pt-wJO" secondAttribute="bottom" id="Df0-lJ-9gq"/>
-                                    <constraint firstAttribute="trailing" secondItem="xbN-Ma-1gM" secondAttribute="trailing" id="MlU-l9-Igu"/>
                                     <constraint firstItem="lQS-Pt-wJO" firstAttribute="height" secondItem="xbN-Ma-1gM" secondAttribute="height" id="RTd-fh-SfA"/>
+                                    <constraint firstItem="xbN-Ma-1gM" firstAttribute="height" secondItem="0wa-cX-dM0" secondAttribute="height" id="UVR-zi-DhE"/>
                                     <constraint firstItem="lQS-Pt-wJO" firstAttribute="top" secondItem="xbN-Ma-1gM" secondAttribute="bottom" constant="10" id="XVG-Y9-GeJ"/>
+                                    <constraint firstItem="0wa-cX-dM0" firstAttribute="leading" secondItem="xbN-Ma-1gM" secondAttribute="trailing" constant="10" id="cx5-lc-lZ4"/>
+                                    <constraint firstItem="xbN-Ma-1gM" firstAttribute="centerY" secondItem="0wa-cX-dM0" secondAttribute="centerY" id="fNF-aI-x6g"/>
                                     <constraint firstAttribute="centerX" secondItem="lQS-Pt-wJO" secondAttribute="centerX" id="fZk-ml-teN"/>
                                     <constraint firstItem="xbN-Ma-1gM" firstAttribute="leading" secondItem="sVC-iC-ay5" secondAttribute="leading" id="nj7-Jg-eob"/>
                                 </constraints>
@@ -83,6 +98,7 @@
                     </view>
                     <navigationItem key="navigationItem" id="1zj-nu-w0Q"/>
                     <connections>
+                        <outlet property="flipButton" destination="0wa-cX-dM0" id="Uw6-9i-Caf"/>
                         <outlet property="starButton" destination="lQS-Pt-wJO" id="fnw-JG-Dba"/>
                     </connections>
                 </viewController>

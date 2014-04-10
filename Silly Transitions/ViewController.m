@@ -12,6 +12,7 @@
 #import "UIBezierPath+SillyTransitions.h"
 
 @interface ViewController ()
+@property (weak, nonatomic) IBOutlet UIButton *flipButton;
 @property (weak, nonatomic) IBOutlet UIButton *starButton;
 @end
 
@@ -22,6 +23,11 @@
     CAShapeLayer *starLayer = [CAShapeLayer layer];
     starLayer.path = [[UIBezierPath BKN_bezierPathWithStarEncompassingRect:self.starButton.titleLabel.frame] CGPath];
     self.starButton.layer.mask = starLayer;
+    
+    CATransform3D transform = CATransform3DIdentity;
+    transform.m34 = 1.0 / -500;
+    transform = CATransform3DRotate(transform, M_PI * - 0.1, 0, 1, 0);
+    self.flipButton.layer.transform = transform;
 }
 
 - (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender
@@ -35,6 +41,8 @@
     
     if ([segue.identifier isEqualToString:@"star"]) {
         [segue.destinationViewController setBKN_introTransitionType:BKNSillyTransitionTypeStar];
+    } else if ([segue.identifier isEqualToString:@"flip"]) {
+        [segue.destinationViewController setBKN_introTransitionType:BKNSillyTransitionTypeFlip];
     }
     
     [segue.destinationViewController setTitle:[sender titleForState:UIControlStateNormal]];

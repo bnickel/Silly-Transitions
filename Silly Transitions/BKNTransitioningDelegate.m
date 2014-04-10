@@ -10,6 +10,7 @@
 #import "UIViewController+SillyTransitions.h"
 #import "UIGestureRecognizer+SillyTransitions.h"
 #import "_BKNStarTransition.h"
+#import "_BKNFlipTransition.h"
 
 @interface BKNTransitioningDelegate()
 @property (nonatomic, strong) id<BKNSillyTransition> currentTransition;
@@ -45,6 +46,10 @@
             
         case BKNSillyTransitionTypeStar:
             self.currentTransition = [[_BKNStarTransition alloc] initWithNavigationOperation:operation];
+            break;
+            
+        case BKNSillyTransitionTypeFlip:
+            self.currentTransition = [[_BKNFlipTransition alloc] initWithNavigationOperation:operation];
             break;
     }
     

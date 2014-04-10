@@ -10,7 +10,8 @@
 
 typedef NS_ENUM(NSInteger, BKNSillyTransitionType) {
     BKNSillyTransitionTypeNone = 0,
-    BKNSillyTransitionTypeStar
+    BKNSillyTransitionTypeStar,
+    BKNSillyTransitionTypeFlip
 };
 
 @interface UIViewController (SillyTransitions)
