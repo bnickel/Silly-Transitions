@@ -36,7 +36,7 @@
     static dispatch_once_t onceToken;
     dispatch_once(&onceToken, ^{
         delegate = [[BKNTransitioningDelegate alloc] init];
-        self.navigationController.delegate = delegate;
+        [delegate manageNavigationController:self.navigationController];
     });
     
     if ([segue.identifier isEqualToString:@"star"]) {

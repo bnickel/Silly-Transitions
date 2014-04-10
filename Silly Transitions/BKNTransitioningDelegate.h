@@ -10,7 +10,10 @@
 
 @protocol BKNSillyTransition;
 
-@interface BKNTransitioningDelegate : NSObject <UINavigationControllerDelegate>
+@interface BKNTransitioningDelegate : NSObject
+
+- (void)manageNavigationController:(UINavigationController *)navigationController;
+
 - (UIScreenEdgePanGestureRecognizer *)panGestureRecognizerForLeftEdgeOfViewController:(UIViewController *)viewController;
 @end
 

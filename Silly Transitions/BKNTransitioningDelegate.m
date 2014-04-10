@@ -13,13 +13,22 @@
 #import "_BKNFlipTransition.h"
 #import "_BKNFadeTransition.h"
 
-@interface BKNTransitioningDelegate()
+@interface BKNTransitioningDelegate() <UINavigationControllerDelegate, UIGestureRecognizerDelegate>
 @property (nonatomic, strong) id<BKNSillyTransition> currentTransition;
 @property (nonatomic, assign) BOOL isInteractive;
 @property (nonatomic, assign) BOOL shouldCompleteCurrentInteractiveTransition;
 @end
 
 @implementation BKNTransitioningDelegate
+
+- (void)manageNavigationController:(UINavigationController *)navigationController
+{
+    navigationController.delegate = self;
+    
+    // This part is *risky*.  Based on http://stackoverflow.com/a/20923477/860000
+    navigationController.interactivePopGestureRecognizer.delegate = self;
+    navigationController.interactivePopGestureRecognizer.BKN_viewController = navigationController;
+}
 
 - (id<UIViewControllerAnimatedTransitioning>)navigationController:(UINavigationController *)navigationController animationControllerForOperation:(UINavigationControllerOperation)operation fromViewController:(UIViewController *)fromVC toViewController:(UIViewController *)toVC
 {
@@ -79,6 +88,7 @@
     UIScreenEdgePanGestureRecognizer *panGestureRecognizer = [[UIScreenEdgePanGestureRecognizer alloc] initWithTarget:self action:@selector(handlePanGesture:)];
     panGestureRecognizer.BKN_viewController = viewController;
     panGestureRecognizer.edges = UIRectEdgeLeft;
+    panGestureRecognizer.delegate = self;
     return panGestureRecognizer;
 }
 
@@ -119,6 +129,28 @@
         case UIGestureRecognizerStatePossible:
             break;
     }
+}
+
+#pragma mark - UINavigationController swipe configuration
+
+- (BOOL)gestureRecognizerShouldBegin:(UIGestureRecognizer *)gestureRecognizer
+{
+    UIViewController *viewController = gestureRecognizer.BKN_viewController;
+    UINavigationController *navigationController = [viewController isKindOfClass:[UINavigationController class]] ? (id)viewController : viewController.navigationController;
+    
+    if (navigationController.transitionCoordinator.isAnimated) {
+        return NO;
+    }
+    
+    if (navigationController.viewControllers.count < 2) {
+        return NO;
+    }
+    
+    if (gestureRecognizer == navigationController.interactivePopGestureRecognizer) {
+        return navigationController.visibleViewController.BKN_introTransitionType == BKNSillyTransitionTypeNone;
+    }
+    
+    return viewController.BKN_introTransitionType != BKNSillyTransitionTypeNone;
 }
 
 @end
