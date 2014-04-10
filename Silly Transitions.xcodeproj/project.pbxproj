@@ -106,6 +106,48 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		EBB01E6318F7550C00212BF0 /* Demo */ = {
+			isa = PBXGroup;
+			children = (
+				EBEBBA7918F5B43A00323064 /* AppDelegate.h */,
+				EBEBBA7A18F5B43A00323064 /* AppDelegate.m */,
+				EBEBBA7C18F5B43A00323064 /* Main.storyboard */,
+				EBEBBA7F18F5B43A00323064 /* ViewController.h */,
+				EBEBBA8018F5B43A00323064 /* ViewController.m */,
+				EBEBBA8218F5B43A00323064 /* Images.xcassets */,
+				EBEBBA7118F5B43A00323064 /* Supporting Files */,
+			);
+			name = Demo;
+			sourceTree = "<group>";
+		};
+		EBB01E6418F7553000212BF0 /* Private Use Categories */ = {
+			isa = PBXGroup;
+			children = (
+				EBEBBAAE18F5E95C00323064 /* UIGestureRecognizer+SillyTransitions.h */,
+				EBEBBAAF18F5E95C00323064 /* UIGestureRecognizer+SillyTransitions.m */,
+				EBEBBAA818F5C03800323064 /* UIBezierPath+SillyTransitions.h */,
+				EBEBBAA918F5C03800323064 /* UIBezierPath+SillyTransitions.m */,
+				EBEBBAAB18F5C83E00323064 /* CATransaction+SillyTransitions.h */,
+				EBEBBAAC18F5C83E00323064 /* CATransaction+SillyTransitions.m */,
+			);
+			name = "Private Use Categories";
+			sourceTree = "<group>";
+		};
+		EBB01E6518F7556800212BF0 /* Transitions */ = {
+			isa = PBXGroup;
+			children = (
+				EBB01E5A18F71F2300212BF0 /* BKNPercentDrivenInteractiveTransition.h */,
+				EBB01E5B18F71F2300212BF0 /* BKNPercentDrivenInteractiveTransition.m */,
+				EBEBBAA518F5B7F900323064 /* _BKNStarTransition.h */,
+				EBEBBAA618F5B7F900323064 /* _BKNStarTransition.m */,
+				EBB01E5D18F727D600212BF0 /* _BKNFlipTransition.h */,
+				EBB01E5E18F727D600212BF0 /* _BKNFlipTransition.m */,
+				EBB01E6018F7375B00212BF0 /* _BKNFadeTransition.h */,
+				EBB01E6118F7375B00212BF0 /* _BKNFadeTransition.m */,
+			);
+			name = Transitions;
+			sourceTree = "<group>";
+		};
 		EBEBBA5E18F5B43A00323064 = {
 			isa = PBXGroup;
 			children = (
@@ -139,31 +181,13 @@
 		EBEBBA7018F5B43A00323064 /* Silly Transitions */ = {
 			isa = PBXGroup;
 			children = (
-				EBEBBA7918F5B43A00323064 /* AppDelegate.h */,
-				EBEBBA7A18F5B43A00323064 /* AppDelegate.m */,
-				EBEBBA7C18F5B43A00323064 /* Main.storyboard */,
-				EBEBBA7F18F5B43A00323064 /* ViewController.h */,
-				EBEBBA8018F5B43A00323064 /* ViewController.m */,
-				EBEBBA8218F5B43A00323064 /* Images.xcassets */,
-				EBEBBA7118F5B43A00323064 /* Supporting Files */,
+				EBB01E6318F7550C00212BF0 /* Demo */,
 				EBEBBA9F18F5B4D200323064 /* BKNTransitioningDelegate.h */,
 				EBEBBAA018F5B4D200323064 /* BKNTransitioningDelegate.m */,
-				EBEBBAAE18F5E95C00323064 /* UIGestureRecognizer+SillyTransitions.h */,
-				EBEBBAAF18F5E95C00323064 /* UIGestureRecognizer+SillyTransitions.m */,
 				EBEBBAA218F5B56C00323064 /* UIViewController+SillyTransitions.h */,
 				EBEBBAA318F5B56C00323064 /* UIViewController+SillyTransitions.m */,
-				EBEBBAA518F5B7F900323064 /* _BKNStarTransition.h */,
-				EBEBBAA618F5B7F900323064 /* _BKNStarTransition.m */,
-				EBB01E5D18F727D600212BF0 /* _BKNFlipTransition.h */,
-				EBB01E5E18F727D600212BF0 /* _BKNFlipTransition.m */,
-				EBB01E6018F7375B00212BF0 /* _BKNFadeTransition.h */,
-				EBB01E6118F7375B00212BF0 /* _BKNFadeTransition.m */,
-				EBEBBAA818F5C03800323064 /* UIBezierPath+SillyTransitions.h */,
-				EBEBBAA918F5C03800323064 /* UIBezierPath+SillyTransitions.m */,
-				EBEBBAAB18F5C83E00323064 /* CATransaction+SillyTransitions.h */,
-				EBEBBAAC18F5C83E00323064 /* CATransaction+SillyTransitions.m */,
-				EBB01E5A18F71F2300212BF0 /* BKNPercentDrivenInteractiveTransition.h */,
-				EBB01E5B18F71F2300212BF0 /* BKNPercentDrivenInteractiveTransition.m */,
+				EBB01E6418F7553000212BF0 /* Private Use Categories */,
+				EBB01E6518F7556800212BF0 /* Transitions */,
 			);
 			path = "Silly Transitions";
 			sourceTree = "<group>";
