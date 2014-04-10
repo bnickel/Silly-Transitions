@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		EBB01E5C18F71F2300212BF0 /* BKNPercentDrivenInteractiveTransition.m in Sources */ = {isa = PBXBuildFile; fileRef = EBB01E5B18F71F2300212BF0 /* BKNPercentDrivenInteractiveTransition.m */; };
 		EBEBBA6B18F5B43A00323064 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = EBEBBA6A18F5B43A00323064 /* Foundation.framework */; };
 		EBEBBA6D18F5B43A00323064 /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = EBEBBA6C18F5B43A00323064 /* CoreGraphics.framework */; };
 		EBEBBA6F18F5B43A00323064 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = EBEBBA6E18F5B43A00323064 /* UIKit.framework */; };
@@ -40,6 +41,8 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		EBB01E5A18F71F2300212BF0 /* BKNPercentDrivenInteractiveTransition.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BKNPercentDrivenInteractiveTransition.h; sourceTree = "<group>"; };
+		EBB01E5B18F71F2300212BF0 /* BKNPercentDrivenInteractiveTransition.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BKNPercentDrivenInteractiveTransition.m; sourceTree = "<group>"; };
 		EBEBBA6718F5B43A00323064 /* Silly Transitions.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Silly Transitions.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		EBEBBA6A18F5B43A00323064 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
 		EBEBBA6C18F5B43A00323064 /* CoreGraphics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreGraphics.framework; path = System/Library/Frameworks/CoreGraphics.framework; sourceTree = SDKROOT; };
@@ -149,6 +152,8 @@
 				EBEBBAA918F5C03800323064 /* UIBezierPath+SillyTransitions.m */,
 				EBEBBAAB18F5C83E00323064 /* CATransaction+SillyTransitions.h */,
 				EBEBBAAC18F5C83E00323064 /* CATransaction+SillyTransitions.m */,
+				EBB01E5A18F71F2300212BF0 /* BKNPercentDrivenInteractiveTransition.h */,
+				EBB01E5B18F71F2300212BF0 /* BKNPercentDrivenInteractiveTransition.m */,
 			);
 			path = "Silly Transitions";
 			sourceTree = "<group>";
@@ -282,6 +287,7 @@
 				EBEBBAA118F5B4D200323064 /* BKNTransitioningDelegate.m in Sources */,
 				EBEBBAA418F5B56C00323064 /* UIViewController+SillyTransitions.m in Sources */,
 				EBEBBAA718F5B7F900323064 /* _BKNStarTransition.m in Sources */,
+				EBB01E5C18F71F2300212BF0 /* BKNPercentDrivenInteractiveTransition.m in Sources */,
 				EBEBBA8118F5B43A00323064 /* ViewController.m in Sources */,
 				EBEBBAAA18F5C03800323064 /* UIBezierPath+SillyTransitions.m in Sources */,
 				EBEBBA7B18F5B43A00323064 /* AppDelegate.m in Sources */,
@@ -492,6 +498,7 @@
 				EBEBBA9B18F5B43A00323064 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		EBEBBA9C18F5B43A00323064 /* Build configuration list for PBXNativeTarget "Silly TransitionsTests" */ = {
 			isa = XCConfigurationList;
@@ -500,6 +507,7 @@
 				EBEBBA9E18F5B43A00323064 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};

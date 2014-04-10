@@ -7,13 +7,14 @@
 //
 
 #import "BKNTransitioningDelegate.h"
+#import "BKNPercentDrivenInteractiveTransition.h"
 
 typedef NS_ENUM(NSInteger, BKNStarTransitionDirection) {
     BKNStarTransitionIn,
     BKNStarTransitionOut
 };
 
-@interface _BKNStarTransition : UIPercentDrivenInteractiveTransition <BKNSillyTransition>
+@interface _BKNStarTransition : BKNPercentDrivenInteractiveTransition <BKNSillyTransition>
 
 - (instancetype)initWithDirection:(BKNStarTransitionDirection)direction;
 - (instancetype)initWithNavigationOperation:(UINavigationControllerOperation)operation;
