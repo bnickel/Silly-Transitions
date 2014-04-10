@@ -7,7 +7,6 @@
 //
 
 #import "ViewController.h"
-#import "BKNTransitioningDelegate.h"
 #import "UIViewController+SillyTransitions.h"
 #import "UIBezierPath+SillyTransitions.h"
 
@@ -32,13 +31,6 @@
 
 - (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender
 {
-    static BKNTransitioningDelegate *delegate;
-    static dispatch_once_t onceToken;
-    dispatch_once(&onceToken, ^{
-        delegate = [[BKNTransitioningDelegate alloc] init];
-        [delegate manageNavigationController:self.navigationController];
-    });
-    
     if ([segue.identifier isEqualToString:@"star"]) {
         [segue.destinationViewController setBKN_introTransitionType:BKNSillyTransitionTypeStar];
     } else if ([segue.identifier isEqualToString:@"flip"]) {

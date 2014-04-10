@@ -21,11 +21,22 @@
 
 @implementation BKNTransitioningDelegate
 
++ (BKNTransitioningDelegate *)sharedDelegate
+{
+    static BKNTransitioningDelegate *sharedDelegate;
+    static dispatch_once_t onceToken;
+    dispatch_once(&onceToken, ^{
+        sharedDelegate = [[BKNTransitioningDelegate alloc] init];
+    });
+    return sharedDelegate;
+}
+
 - (void)manageNavigationController:(UINavigationController *)navigationController
 {
     navigationController.delegate = self;
     
     // This part is *risky*.  Based on http://stackoverflow.com/a/20923477/860000
+    [navigationController view]; // interactivePopGestureRecognizer is initialized in -viewDidLoad
     navigationController.interactivePopGestureRecognizer.delegate = self;
     navigationController.interactivePopGestureRecognizer.BKN_viewController = navigationController;
 }

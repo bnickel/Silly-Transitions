@@ -12,9 +12,12 @@
 
 @interface BKNTransitioningDelegate : NSObject
 
++ (BKNTransitioningDelegate *)sharedDelegate;
+
 - (void)manageNavigationController:(UINavigationController *)navigationController;
 
 - (UIScreenEdgePanGestureRecognizer *)panGestureRecognizerForLeftEdgeOfViewController:(UIViewController *)viewController;
+
 @end
 
 @protocol BKNSillyTransition <UIViewControllerAnimatedTransitioning, UIViewControllerInteractiveTransitioning>
