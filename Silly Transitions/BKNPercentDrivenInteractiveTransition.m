@@ -11,11 +11,17 @@
 // Slightly modified version of https://github.com/stringcode86/UIPercentDrivenInteractiveTransitionWithCABasicAnimation
 
 @interface BKNPercentDrivenInteractiveTransition () <UIViewControllerAnimatedTransitioning>
+@property (nonatomic, readonly, weak) CALayer *containerLayer;
 @property (nonatomic, weak) id<UIViewControllerContextTransitioning> transitionContext;
 @property (nonatomic, assign) CFTimeInterval pausedTime;
 @end
 
 @implementation BKNPercentDrivenInteractiveTransition
+
+- (CALayer *)containerLayer
+{
+    return [self.transitionContext containerView].layer;
+}
 
 - (void)animateTransition:(id<UIViewControllerContextTransitioning>)transitionContext
 {
@@ -28,35 +34,35 @@
 
 - (void)animationEnded:(BOOL)transitionCompleted
 {
-    CALayer *containerLayer =[_transitionContext containerView].layer;
-    containerLayer.speed = 1.0;
+    self.containerLayer.speed = 1.0;
 }
 
 - (void)startInteractiveTransition:(id<UIViewControllerContextTransitioning>)transitionContext
 {
     _transitionContext = transitionContext;
-    [self animateTransition:_transitionContext];
-    [self pauseLayer:[transitionContext containerView].layer];
+    _duration = [self transitionDuration:transitionContext];
+    
+    [self animateTransition:transitionContext];
+    [self pauseLayer:self.containerLayer];
 }
 
 - (void)updateInteractiveTransition:(CGFloat)percentComplete
 {
-    [_transitionContext updateInteractiveTransition:percentComplete];
-    [_transitionContext containerView].layer.timeOffset =  _pausedTime + [self transitionDuration:_transitionContext]*percentComplete;
+    [self.transitionContext updateInteractiveTransition:percentComplete];
+    self.containerLayer.timeOffset =  self.pausedTime + self.duration * percentComplete;
 }
 
 - (void)cancelInteractiveTransition
 {
-    [_transitionContext cancelInteractiveTransition];
-    CALayer *containerLayer =[_transitionContext containerView].layer;
-    containerLayer.speed = -self.completionSpeed;
-    containerLayer.beginTime = CACurrentMediaTime();
+    [self.transitionContext cancelInteractiveTransition];
+    self.containerLayer.speed = -1.0;
+    self.containerLayer.beginTime = CACurrentMediaTime();
 }
 
 - (void)finishInteractiveTransition
 {
-    [_transitionContext finishInteractiveTransition];
-    [self resumeLayer:[_transitionContext containerView].layer];
+    [self.transitionContext finishInteractiveTransition];
+    [self resumeLayer:self.containerLayer];
 }
 
 - (void)pauseLayer:(CALayer*)layer
@@ -64,7 +70,7 @@
     CFTimeInterval pausedTime = [layer convertTime:CACurrentMediaTime() fromLayer:nil];
     layer.speed = 0.0;
     layer.timeOffset = pausedTime;
-    _pausedTime = pausedTime;
+    self.pausedTime = pausedTime;
 }
 
 - (void)resumeLayer:(CALayer*)layer
