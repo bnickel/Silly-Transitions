@@ -88,8 +88,10 @@
                 break;
         }
         
+        pathAnimation.fillMode = kCAFillModeBoth;
+        pathAnimation.removedOnCompletion = NO;
+        
         [shapeLayer addAnimation:pathAnimation forKey:@"path"];
-        shapeLayer.path = (__bridge CGPathRef)(pathAnimation.toValue);
     } completion:^{
         viewToAnimate.layer.mask = nil;
         if ([transitionContext transitionWasCancelled]) {
