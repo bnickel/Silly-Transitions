@@ -7,9 +7,15 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		EBB01E5C18F71F2300212BF0 /* BKNPercentDrivenInteractiveTransition.m in Sources */ = {isa = PBXBuildFile; fileRef = EBB01E5B18F71F2300212BF0 /* BKNPercentDrivenInteractiveTransition.m */; };
-		EBB01E5F18F727D600212BF0 /* _BKNFlipTransition.m in Sources */ = {isa = PBXBuildFile; fileRef = EBB01E5E18F727D600212BF0 /* _BKNFlipTransition.m */; };
-		EBB01E6218F7375B00212BF0 /* _BKNFadeTransition.m in Sources */ = {isa = PBXBuildFile; fileRef = EBB01E6118F7375B00212BF0 /* _BKNFadeTransition.m */; };
+		67A7E58E198FDB8C0010D50E /* CATransaction+SillyTransitions.m in Sources */ = {isa = PBXBuildFile; fileRef = 67A7E587198FDB8C0010D50E /* CATransaction+SillyTransitions.m */; };
+		67A7E58F198FDB8C0010D50E /* UIBezierPath+SillyTransitions.m in Sources */ = {isa = PBXBuildFile; fileRef = 67A7E589198FDB8C0010D50E /* UIBezierPath+SillyTransitions.m */; };
+		67A7E590198FDB8C0010D50E /* UIGestureRecognizer+SillyTransitions.m in Sources */ = {isa = PBXBuildFile; fileRef = 67A7E58B198FDB8C0010D50E /* UIGestureRecognizer+SillyTransitions.m */; };
+		67A7E591198FDB8C0010D50E /* UIViewController+SillyTransitions.m in Sources */ = {isa = PBXBuildFile; fileRef = 67A7E58D198FDB8C0010D50E /* UIViewController+SillyTransitions.m */; };
+		67A7E59C198FDB9A0010D50E /* _BKNFadeTransition.m in Sources */ = {isa = PBXBuildFile; fileRef = 67A7E593198FDB9A0010D50E /* _BKNFadeTransition.m */; };
+		67A7E59D198FDB9A0010D50E /* _BKNFlipTransition.m in Sources */ = {isa = PBXBuildFile; fileRef = 67A7E595198FDB9A0010D50E /* _BKNFlipTransition.m */; };
+		67A7E59E198FDB9A0010D50E /* _BKNStarTransition.m in Sources */ = {isa = PBXBuildFile; fileRef = 67A7E597198FDB9A0010D50E /* _BKNStarTransition.m */; };
+		67A7E59F198FDB9A0010D50E /* BKNPercentDrivenInteractiveTransition.m in Sources */ = {isa = PBXBuildFile; fileRef = 67A7E599198FDB9A0010D50E /* BKNPercentDrivenInteractiveTransition.m */; };
+		67A7E5A0198FDB9A0010D50E /* BKNTransitioningDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 67A7E59B198FDB9A0010D50E /* BKNTransitioningDelegate.m */; };
 		EBEBBA6B18F5B43A00323064 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = EBEBBA6A18F5B43A00323064 /* Foundation.framework */; };
 		EBEBBA6D18F5B43A00323064 /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = EBEBBA6C18F5B43A00323064 /* CoreGraphics.framework */; };
 		EBEBBA6F18F5B43A00323064 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = EBEBBA6E18F5B43A00323064 /* UIKit.framework */; };
@@ -24,12 +30,6 @@
 		EBEBBA8C18F5B43A00323064 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = EBEBBA6E18F5B43A00323064 /* UIKit.framework */; };
 		EBEBBA9418F5B43A00323064 /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = EBEBBA9218F5B43A00323064 /* InfoPlist.strings */; };
 		EBEBBA9618F5B43A00323064 /* Silly_TransitionsTests.m in Sources */ = {isa = PBXBuildFile; fileRef = EBEBBA9518F5B43A00323064 /* Silly_TransitionsTests.m */; };
-		EBEBBAA118F5B4D200323064 /* BKNTransitioningDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = EBEBBAA018F5B4D200323064 /* BKNTransitioningDelegate.m */; };
-		EBEBBAA418F5B56C00323064 /* UIViewController+SillyTransitions.m in Sources */ = {isa = PBXBuildFile; fileRef = EBEBBAA318F5B56C00323064 /* UIViewController+SillyTransitions.m */; };
-		EBEBBAA718F5B7F900323064 /* _BKNStarTransition.m in Sources */ = {isa = PBXBuildFile; fileRef = EBEBBAA618F5B7F900323064 /* _BKNStarTransition.m */; };
-		EBEBBAAA18F5C03800323064 /* UIBezierPath+SillyTransitions.m in Sources */ = {isa = PBXBuildFile; fileRef = EBEBBAA918F5C03800323064 /* UIBezierPath+SillyTransitions.m */; };
-		EBEBBAAD18F5C83E00323064 /* CATransaction+SillyTransitions.m in Sources */ = {isa = PBXBuildFile; fileRef = EBEBBAAC18F5C83E00323064 /* CATransaction+SillyTransitions.m */; };
-		EBEBBAB018F5E95C00323064 /* UIGestureRecognizer+SillyTransitions.m in Sources */ = {isa = PBXBuildFile; fileRef = EBEBBAAF18F5E95C00323064 /* UIGestureRecognizer+SillyTransitions.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -43,12 +43,24 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
-		EBB01E5A18F71F2300212BF0 /* BKNPercentDrivenInteractiveTransition.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BKNPercentDrivenInteractiveTransition.h; sourceTree = "<group>"; };
-		EBB01E5B18F71F2300212BF0 /* BKNPercentDrivenInteractiveTransition.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BKNPercentDrivenInteractiveTransition.m; sourceTree = "<group>"; };
-		EBB01E5D18F727D600212BF0 /* _BKNFlipTransition.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = _BKNFlipTransition.h; sourceTree = "<group>"; };
-		EBB01E5E18F727D600212BF0 /* _BKNFlipTransition.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = _BKNFlipTransition.m; sourceTree = "<group>"; };
-		EBB01E6018F7375B00212BF0 /* _BKNFadeTransition.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = _BKNFadeTransition.h; sourceTree = "<group>"; };
-		EBB01E6118F7375B00212BF0 /* _BKNFadeTransition.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = _BKNFadeTransition.m; sourceTree = "<group>"; };
+		67A7E586198FDB8C0010D50E /* CATransaction+SillyTransitions.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = "CATransaction+SillyTransitions.h"; path = "Source/CATransaction+SillyTransitions.h"; sourceTree = "<group>"; };
+		67A7E587198FDB8C0010D50E /* CATransaction+SillyTransitions.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = "CATransaction+SillyTransitions.m"; path = "Source/CATransaction+SillyTransitions.m"; sourceTree = "<group>"; };
+		67A7E588198FDB8C0010D50E /* UIBezierPath+SillyTransitions.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = "UIBezierPath+SillyTransitions.h"; path = "Source/UIBezierPath+SillyTransitions.h"; sourceTree = "<group>"; };
+		67A7E589198FDB8C0010D50E /* UIBezierPath+SillyTransitions.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = "UIBezierPath+SillyTransitions.m"; path = "Source/UIBezierPath+SillyTransitions.m"; sourceTree = "<group>"; };
+		67A7E58A198FDB8C0010D50E /* UIGestureRecognizer+SillyTransitions.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = "UIGestureRecognizer+SillyTransitions.h"; path = "Source/UIGestureRecognizer+SillyTransitions.h"; sourceTree = "<group>"; };
+		67A7E58B198FDB8C0010D50E /* UIGestureRecognizer+SillyTransitions.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = "UIGestureRecognizer+SillyTransitions.m"; path = "Source/UIGestureRecognizer+SillyTransitions.m"; sourceTree = "<group>"; };
+		67A7E58C198FDB8C0010D50E /* UIViewController+SillyTransitions.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = "UIViewController+SillyTransitions.h"; path = "Source/UIViewController+SillyTransitions.h"; sourceTree = "<group>"; };
+		67A7E58D198FDB8C0010D50E /* UIViewController+SillyTransitions.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = "UIViewController+SillyTransitions.m"; path = "Source/UIViewController+SillyTransitions.m"; sourceTree = "<group>"; };
+		67A7E592198FDB9A0010D50E /* _BKNFadeTransition.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = _BKNFadeTransition.h; path = Source/_BKNFadeTransition.h; sourceTree = "<group>"; };
+		67A7E593198FDB9A0010D50E /* _BKNFadeTransition.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = _BKNFadeTransition.m; path = Source/_BKNFadeTransition.m; sourceTree = "<group>"; };
+		67A7E594198FDB9A0010D50E /* _BKNFlipTransition.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = _BKNFlipTransition.h; path = Source/_BKNFlipTransition.h; sourceTree = "<group>"; };
+		67A7E595198FDB9A0010D50E /* _BKNFlipTransition.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = _BKNFlipTransition.m; path = Source/_BKNFlipTransition.m; sourceTree = "<group>"; };
+		67A7E596198FDB9A0010D50E /* _BKNStarTransition.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = _BKNStarTransition.h; path = Source/_BKNStarTransition.h; sourceTree = "<group>"; };
+		67A7E597198FDB9A0010D50E /* _BKNStarTransition.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = _BKNStarTransition.m; path = Source/_BKNStarTransition.m; sourceTree = "<group>"; };
+		67A7E598198FDB9A0010D50E /* BKNPercentDrivenInteractiveTransition.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = BKNPercentDrivenInteractiveTransition.h; path = Source/BKNPercentDrivenInteractiveTransition.h; sourceTree = "<group>"; };
+		67A7E599198FDB9A0010D50E /* BKNPercentDrivenInteractiveTransition.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = BKNPercentDrivenInteractiveTransition.m; path = Source/BKNPercentDrivenInteractiveTransition.m; sourceTree = "<group>"; };
+		67A7E59A198FDB9A0010D50E /* BKNTransitioningDelegate.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = BKNTransitioningDelegate.h; path = Source/BKNTransitioningDelegate.h; sourceTree = "<group>"; };
+		67A7E59B198FDB9A0010D50E /* BKNTransitioningDelegate.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = BKNTransitioningDelegate.m; path = Source/BKNTransitioningDelegate.m; sourceTree = "<group>"; };
 		EBEBBA6718F5B43A00323064 /* Silly Transitions.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Silly Transitions.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		EBEBBA6A18F5B43A00323064 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
 		EBEBBA6C18F5B43A00323064 /* CoreGraphics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreGraphics.framework; path = System/Library/Frameworks/CoreGraphics.framework; sourceTree = SDKROOT; };
@@ -68,18 +80,6 @@
 		EBEBBA9118F5B43A00323064 /* Silly TransitionsTests-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "Silly TransitionsTests-Info.plist"; sourceTree = "<group>"; };
 		EBEBBA9318F5B43A00323064 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
 		EBEBBA9518F5B43A00323064 /* Silly_TransitionsTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = Silly_TransitionsTests.m; sourceTree = "<group>"; };
-		EBEBBA9F18F5B4D200323064 /* BKNTransitioningDelegate.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BKNTransitioningDelegate.h; sourceTree = "<group>"; };
-		EBEBBAA018F5B4D200323064 /* BKNTransitioningDelegate.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BKNTransitioningDelegate.m; sourceTree = "<group>"; };
-		EBEBBAA218F5B56C00323064 /* UIViewController+SillyTransitions.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIViewController+SillyTransitions.h"; sourceTree = "<group>"; };
-		EBEBBAA318F5B56C00323064 /* UIViewController+SillyTransitions.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIViewController+SillyTransitions.m"; sourceTree = "<group>"; };
-		EBEBBAA518F5B7F900323064 /* _BKNStarTransition.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = _BKNStarTransition.h; sourceTree = "<group>"; };
-		EBEBBAA618F5B7F900323064 /* _BKNStarTransition.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = _BKNStarTransition.m; sourceTree = "<group>"; };
-		EBEBBAA818F5C03800323064 /* UIBezierPath+SillyTransitions.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIBezierPath+SillyTransitions.h"; sourceTree = "<group>"; };
-		EBEBBAA918F5C03800323064 /* UIBezierPath+SillyTransitions.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIBezierPath+SillyTransitions.m"; sourceTree = "<group>"; };
-		EBEBBAAB18F5C83E00323064 /* CATransaction+SillyTransitions.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "CATransaction+SillyTransitions.h"; sourceTree = "<group>"; };
-		EBEBBAAC18F5C83E00323064 /* CATransaction+SillyTransitions.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "CATransaction+SillyTransitions.m"; sourceTree = "<group>"; };
-		EBEBBAAE18F5E95C00323064 /* UIGestureRecognizer+SillyTransitions.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIGestureRecognizer+SillyTransitions.h"; sourceTree = "<group>"; };
-		EBEBBAAF18F5E95C00323064 /* UIGestureRecognizer+SillyTransitions.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIGestureRecognizer+SillyTransitions.m"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -123,12 +123,14 @@
 		EBB01E6418F7553000212BF0 /* Private Use Categories */ = {
 			isa = PBXGroup;
 			children = (
-				EBEBBAAE18F5E95C00323064 /* UIGestureRecognizer+SillyTransitions.h */,
-				EBEBBAAF18F5E95C00323064 /* UIGestureRecognizer+SillyTransitions.m */,
-				EBEBBAA818F5C03800323064 /* UIBezierPath+SillyTransitions.h */,
-				EBEBBAA918F5C03800323064 /* UIBezierPath+SillyTransitions.m */,
-				EBEBBAAB18F5C83E00323064 /* CATransaction+SillyTransitions.h */,
-				EBEBBAAC18F5C83E00323064 /* CATransaction+SillyTransitions.m */,
+				67A7E586198FDB8C0010D50E /* CATransaction+SillyTransitions.h */,
+				67A7E587198FDB8C0010D50E /* CATransaction+SillyTransitions.m */,
+				67A7E588198FDB8C0010D50E /* UIBezierPath+SillyTransitions.h */,
+				67A7E589198FDB8C0010D50E /* UIBezierPath+SillyTransitions.m */,
+				67A7E58A198FDB8C0010D50E /* UIGestureRecognizer+SillyTransitions.h */,
+				67A7E58B198FDB8C0010D50E /* UIGestureRecognizer+SillyTransitions.m */,
+				67A7E58C198FDB8C0010D50E /* UIViewController+SillyTransitions.h */,
+				67A7E58D198FDB8C0010D50E /* UIViewController+SillyTransitions.m */,
 			);
 			name = "Private Use Categories";
 			sourceTree = "<group>";
@@ -136,14 +138,16 @@
 		EBB01E6518F7556800212BF0 /* Transitions */ = {
 			isa = PBXGroup;
 			children = (
-				EBB01E5A18F71F2300212BF0 /* BKNPercentDrivenInteractiveTransition.h */,
-				EBB01E5B18F71F2300212BF0 /* BKNPercentDrivenInteractiveTransition.m */,
-				EBEBBAA518F5B7F900323064 /* _BKNStarTransition.h */,
-				EBEBBAA618F5B7F900323064 /* _BKNStarTransition.m */,
-				EBB01E5D18F727D600212BF0 /* _BKNFlipTransition.h */,
-				EBB01E5E18F727D600212BF0 /* _BKNFlipTransition.m */,
-				EBB01E6018F7375B00212BF0 /* _BKNFadeTransition.h */,
-				EBB01E6118F7375B00212BF0 /* _BKNFadeTransition.m */,
+				67A7E592198FDB9A0010D50E /* _BKNFadeTransition.h */,
+				67A7E593198FDB9A0010D50E /* _BKNFadeTransition.m */,
+				67A7E594198FDB9A0010D50E /* _BKNFlipTransition.h */,
+				67A7E595198FDB9A0010D50E /* _BKNFlipTransition.m */,
+				67A7E596198FDB9A0010D50E /* _BKNStarTransition.h */,
+				67A7E597198FDB9A0010D50E /* _BKNStarTransition.m */,
+				67A7E598198FDB9A0010D50E /* BKNPercentDrivenInteractiveTransition.h */,
+				67A7E599198FDB9A0010D50E /* BKNPercentDrivenInteractiveTransition.m */,
+				67A7E59A198FDB9A0010D50E /* BKNTransitioningDelegate.h */,
+				67A7E59B198FDB9A0010D50E /* BKNTransitioningDelegate.m */,
 			);
 			name = Transitions;
 			sourceTree = "<group>";
@@ -182,10 +186,6 @@
 			isa = PBXGroup;
 			children = (
 				EBB01E6318F7550C00212BF0 /* Demo */,
-				EBEBBA9F18F5B4D200323064 /* BKNTransitioningDelegate.h */,
-				EBEBBAA018F5B4D200323064 /* BKNTransitioningDelegate.m */,
-				EBEBBAA218F5B56C00323064 /* UIViewController+SillyTransitions.h */,
-				EBEBBAA318F5B56C00323064 /* UIViewController+SillyTransitions.m */,
 				EBB01E6418F7553000212BF0 /* Private Use Categories */,
 				EBB01E6518F7556800212BF0 /* Transitions */,
 			);
@@ -318,18 +318,18 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				EBB01E6218F7375B00212BF0 /* _BKNFadeTransition.m in Sources */,
-				EBEBBAA118F5B4D200323064 /* BKNTransitioningDelegate.m in Sources */,
-				EBB01E5F18F727D600212BF0 /* _BKNFlipTransition.m in Sources */,
-				EBEBBAA418F5B56C00323064 /* UIViewController+SillyTransitions.m in Sources */,
-				EBEBBAA718F5B7F900323064 /* _BKNStarTransition.m in Sources */,
-				EBB01E5C18F71F2300212BF0 /* BKNPercentDrivenInteractiveTransition.m in Sources */,
+				67A7E59C198FDB9A0010D50E /* _BKNFadeTransition.m in Sources */,
+				67A7E59D198FDB9A0010D50E /* _BKNFlipTransition.m in Sources */,
+				67A7E590198FDB8C0010D50E /* UIGestureRecognizer+SillyTransitions.m in Sources */,
+				67A7E5A0198FDB9A0010D50E /* BKNTransitioningDelegate.m in Sources */,
 				EBEBBA8118F5B43A00323064 /* ViewController.m in Sources */,
-				EBEBBAAA18F5C03800323064 /* UIBezierPath+SillyTransitions.m in Sources */,
+				67A7E59E198FDB9A0010D50E /* _BKNStarTransition.m in Sources */,
 				EBEBBA7B18F5B43A00323064 /* AppDelegate.m in Sources */,
-				EBEBBAAD18F5C83E00323064 /* CATransaction+SillyTransitions.m in Sources */,
-				EBEBBAB018F5E95C00323064 /* UIGestureRecognizer+SillyTransitions.m in Sources */,
+				67A7E58F198FDB8C0010D50E /* UIBezierPath+SillyTransitions.m in Sources */,
+				67A7E58E198FDB8C0010D50E /* CATransaction+SillyTransitions.m in Sources */,
 				EBEBBA7718F5B43A00323064 /* main.m in Sources */,
+				67A7E59F198FDB9A0010D50E /* BKNPercentDrivenInteractiveTransition.m in Sources */,
+				67A7E591198FDB8C0010D50E /* UIViewController+SillyTransitions.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
